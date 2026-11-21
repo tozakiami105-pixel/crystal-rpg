@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="エルディア" />
+  <meta name="theme-color" content="#070712" />
+  <meta name="description" content="残光のエルディア お試し版" />
+  <title>残光のエルディア</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="frame">
+    <div id="app">
+      <canvas id="game"></canvas>
+
+      <div id="vignette"></div>
+
+      <div id="loading">
+        <div class="load-crystal"></div>
+        <p>読み込み中</p>
+      </div>
+
+      <div id="screen-title" class="screen hidden">
+        <div class="title-cluster">
+          <p class="title-kicker">浮遊大陸の物語</p>
+          <h1 class="title-main">残光のエルディア</h1>
+          <p class="title-sub">お試し版</p>
+        </div>
+        <button type="button" id="btn-start" class="btn-primary">はじめる</button>
+        <p class="title-hint">画面下の十字で歩き、近くの人に話しかけてください<br />ホーム画面に追加すると、アプリのように開けます</p>
+      </div>
+
+      <div id="objective" class="hidden"></div>
+
+      <div id="dialogue" class="hidden" aria-live="polite">
+        <div id="dlg-name" class="dlg-name hidden"></div>
+        <p id="dlg-text" class="dlg-text"></p>
+        <span id="dlg-next" class="dlg-next hidden">▼</span>
+      </div>
+
+      <div id="battle-ui" class="hidden">
+        <div id="enemy-hud">
+          <div class="eh-name" id="enemy-name"></div>
+          <div class="hp-bar"><i id="enemy-hp"></i></div>
+          <div class="eh-nums" id="enemy-hp-text"></div>
+        </div>
+        <div id="battle-log"></div>
+        <div id="party-hud"></div>
+        <div id="commands"></div>
+      </div>
+
+      <div id="ending" class="screen hidden">
+        <p class="end-kicker">お試し版 ここまで</p>
+        <h2 class="end-title">つづく</h2>
+        <p class="end-body" id="ending-body"></p>
+        <button type="button" id="btn-title" class="btn-primary">タイトルへ</button>
+      </div>
+
+      <div id="gameover" class="screen hidden">
+        <h2 class="end-title">光が、途絶えた</h2>
+        <p class="end-body">パーティは力尽きた……もう一度、戦い直せます。</p>
+        <button type="button" id="btn-retry" class="btn-primary">もう一度戦う</button>
+      </div>
+
+      <div id="controls" class="hidden">
+        <div id="stick" aria-label="移動">
+          <div id="stick-base"></div>
+          <div id="stick-knob"></div>
+        </div>
+        <button type="button" id="btn-action" class="btn-action">話す</button>
+      </div>
+
+      <button type="button" id="btn-mute" class="btn-mute" aria-label="音声">♪</button>
+      <div id="fade"></div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
